@@ -1,0 +1,8 @@
+<div>
+  <div *ngFor="let val of list">
+    <mat-checkbox class="mat-option" [checked]="true" (click)="onSelection($event, val)">
+      {{val.name}}
+    </mat-checkbox>
+  </div>
+  
+</div>

@@ -1,0 +1,16 @@
+<form [formGroup]="form">
+	<mat-form-field class="full-width">
+		<mat-select placeholder="Opotion" formControlName="selectControl" multiple (selectionChange)="onSelectionChange($event)">
+
+			<app-select-check-all [model]="form.get('selectControl')" [values]="options" (selectAll)="onSelectAll($event)">
+			
+			</app-select-check-all>
+			<app-select-option-div label="Selected Options"></app-select-option-div>
+			
+
+			<app-select-selected-option [list]="selectedOptions" (selectedOptionChange)="onSelOptionsChnage($event)"></app-select-selected-option> 
+			<app-select-option-div label="All Options"></app-select-option-div>
+			<mat-option *ngFor="let option of options" [value]="option">{{ option.name }}</mat-option>
+		</mat-select>
+	</mat-form-field>
+</form>
